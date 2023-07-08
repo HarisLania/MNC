@@ -17,6 +17,12 @@ namespace MNC.Controllers
         {
             _itemRepository = itemRepository;
         }
+
+        public ActionResult GetAll()
+        {
+            var items = _itemRepository.GetAllItems();
+            return Json(items, JsonRequestBehavior.AllowGet);
+        }
         public ActionResult Index()
         {
             var items = _itemRepository.GetAllItems();
