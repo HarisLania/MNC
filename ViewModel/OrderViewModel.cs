@@ -6,9 +6,11 @@ using System.Web;
 
 namespace MNC.ViewModel
 {
-    public class EmployeeCreateViewModel
+    public class OrderViewModel
     {
+        public Order Order { get; set; }
         public Employee Employee { get; set; }
-        public List<Department> Departments { get; set; }
+        public Customer Customer { get; set; }
+        public Item Item { get; set; }
     }
 }

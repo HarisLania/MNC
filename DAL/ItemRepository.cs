@@ -15,9 +15,9 @@ namespace MNC.DAL
             _dbContext = dbContext;
         }
 
-        public List<Item> GetAllItems()
+        public IEnumerable<Item> GetAllItems()
         {
-            return _dbContext.Items.ToList();
+            return _dbContext.Items;
         }
 
         public Item GetItemById(int id)
