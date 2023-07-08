@@ -1,0 +1,30 @@
+﻿@model List<MNC.ViewModel.EmployeeViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Employee</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Department</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@item.Employee.Name</td>
+        <td>@item.Department.Name</td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Employee.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Employee.Id })
+        </td>
+    </tr>
+}
+
+</table>

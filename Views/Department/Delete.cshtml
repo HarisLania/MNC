@@ -1,0 +1,17 @@
+﻿@model MNC.Models.Department
+
+<h2>Delete Department</h2>
+
+<div>
+    <p>Are you sure you want to delete the department with the following details?</p>
+    <p>Department ID: @Model.Id</p>
+    <p>Department Name: @Model.Name</p>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-danger">Delete</button>
+    @Html.ActionLink("Cancel", "Index", "Department", null, new { @class = "btn btn-default" })
+}
+
